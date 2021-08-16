@@ -4,8 +4,10 @@
 #Scissor > Paper
 #'''
 import random
-import keyboard
-import sys
+
+W = 0
+L = 0
+D = 0
 
 def game():
     user = input("Enter R for Rock\nEnter P for Paper\nEnter S for Scissor\n")
@@ -41,13 +43,20 @@ def game():
     pass
 
 
-
 while True:
     result = game()
     if(result == None):
+        D = D + 1
         print("DRAW")
     elif(result == True):
+        W = W + 1
         print("You WON")
     else:
-        print("You LOSE")      
-    
+        L = L + 1
+        print("You LOSE")
+    print(f"WIN : {W} DRAW : {D} LOSE : {L}")
+    i = input(print("press C to continue and E to Exit"))
+    if(i == "C"):
+        pass    
+    elif(i == "E"):
+        break
